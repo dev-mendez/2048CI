@@ -15,6 +15,7 @@ class Table_Model extends CI_Model {
 		$query = $this->db->get('user_records');
         return $query->row();
 	}
+	
     public function insertRecords($data)
     {
         if (isset($data)) {

@@ -18,6 +18,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('home/index');
+		
+	}
+	public function game(){
+
 		$this->load->view('game/index');
 		
 	}
@@ -27,6 +32,9 @@ class Home extends CI_Controller {
 		$record = $this->input->post('record');
 		$data = $arrayName = array('username' => $name,'record'=>$record );
 		$this->Table_Model->insertRecords($data);
+	}
+	public function scoreboard(){
+		$this->load->view('game/scoreboard');
 	}
 
 }

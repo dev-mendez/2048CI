@@ -3,8 +3,8 @@ function HTMLActuator() {
 	this.scoreContainer = document.querySelector(".score-container");
 	this.bestContainer = document.querySelector(".best-container");
 	this.messageContainer = document.querySelector(".game-message");
-
 	this.score = 0;
+
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -132,7 +132,9 @@ HTMLActuator.prototype.message = function (won) {
 	this.messageContainer.classList.add(type);
 	this.messageContainer.getElementsByTagName("p")[0].textContent = message;
 };
+
 function updatePoints(score) {
+
 
 	$.ajax({
 		url: 'home/updatePoints',
