@@ -104,6 +104,9 @@ HTMLActuator.prototype.positionClass = function (position) {
 };
 
 HTMLActuator.prototype.updateScore = function (score) {
+
+	document.getElementById('xyz').play();-
+
 	this.clearContainer(this.scoreContainer);
 
 	var difference = score - this.score;
@@ -128,19 +131,20 @@ HTMLActuator.prototype.message = function (won) {
 	var type = won ? "game-won" : "game-over";
 	var message = won ? "You win!" : "Game over!";
 	score = this.score;
+	document.getElementById('cuac').play();
+
 	updatePoints(score);
 	this.messageContainer.classList.add(type);
 	this.messageContainer.getElementsByTagName("p")[0].textContent = message;
 };
 
 function updatePoints(score) {
-
-
+	id = $('#id').val();	
 	$.ajax({
 		url: 'home/updatePoints',
 		type: 'POST',
 		data: {
-			name: "Test",
+			id: id,
 			record: score
 		},
 		success: function (response) {
